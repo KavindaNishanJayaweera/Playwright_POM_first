@@ -7,13 +7,21 @@ export class LoginPage{
 
     constructor(page){
         //If someone call Loginpage, They firstly do things inside constructor
-
         //Can use this variable outside as well
+
+        this.page = page;
+
         this.usernameField = page.locator('#username');
         this.passwordField = page.locator('#password');
         this.signinBtn =  page.locator('[type="submit"]');
         this.errorMessage = page.locator('[data-slot="alert-description"]')
     }
+
+    //Goto Site
+    async gotoSite(){
+       await this.page.goto('/login');
+    }
+
 
     //Write Action methods for those elements outside of the constructor
     async typeUsername(usernameValue){
