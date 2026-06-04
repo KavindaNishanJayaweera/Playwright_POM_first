@@ -33,7 +33,8 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot:'only-on-failure',
     video:'retain-on-failure',
-    headless:false
+    headless:false,
+    baseURL:'https://test-automation-app.vercel.app'
   },
 
   /* Configure projects for major browsers */

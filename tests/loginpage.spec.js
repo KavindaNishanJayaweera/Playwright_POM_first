@@ -5,9 +5,9 @@ import { DashboardPage } from "../pages/DashboardPage";
 
 test('login', async function loginPage({page}){
 
-    await page.goto('https://test-automation-app.vercel.app/login');
     //create a obj and assign it to Vari
     let login = new LoginPage(page);
+    await login.gotoSite();
     await login.typeUsername('test@gmail.com');
     await login.typePassword('123');
     await login.clickBtn();
@@ -17,8 +17,8 @@ test('login', async function loginPage({page}){
 })
 
 test('loginerror',async function loginPageTestII({page}){
-    await page.goto('https://test-automation-app.vercel.app/login');
     let login = new LoginPage(page);
+    await login.gotoSite();
     await login.typeUsername('demo@gmail.com');
     await login.typePassword('Admin123');
     await login.clickBtn();
@@ -26,8 +26,8 @@ test('loginerror',async function loginPageTestII({page}){
 })
 
 test('valid login success title',async function validLogin({page}){
-    await page.goto('https://test-automation-app.vercel.app/login');
     let login = new LoginPage(page);
+    await login.gotoSite();
     await login.typeUsername('test@gmail.com');
     await login.typePassword('Admin123');
     await login.clickBtn();
