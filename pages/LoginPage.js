@@ -16,15 +16,17 @@ export class LoginPage{
     }
 
     //Write Action methods for those elements outside of the constructor
-    async typeUsername(){
+    async typeUsername(usernameValue){
         //Fill return promise - so add await
         //when adding await we need to guide method to wait 
         // so change method as async
-        await this.usernameField.fill('test@gmail.com');
+        await this.usernameField.fill(usernameValue);
     }
 
-    async typePassword(){
-        await this.passwordField.fill('Admin1234')
+    async typePassword(passwordValue){
+        //When user call this method they need pass value for passwordvalue
+        //This call method parameterized
+        await this.passwordField.fill(passwordValue)
     }
 
     async clickBtn(){
